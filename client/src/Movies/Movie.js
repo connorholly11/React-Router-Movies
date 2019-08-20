@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  console.log(props);
+
+  const id = props.match.params.id;
  
   useEffect(() => {
-    const id = 1;
+
+    
+    // const movie = props.movies.find(movie => props.match.params.id === `${movie.id}`);
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -18,12 +24,15 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
+  //   addToSavedList(movie);
+  //   // document.querySelector('.saveButton').addEventListener('click', function() {
+  //   //   console.log('HELLO');
+  //   // })
   // }
 
   if (!movie) {
@@ -34,6 +43,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <div className="movie-card">
+        {/* <Link to='/movies/3'>go to movie 6</Link> */}
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
@@ -49,7 +59,9 @@ const Movie = (props) => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="saveButton" 
+      // onClick={ () => saveMovie()}
+      > Save </div>
     </div>
   );
 }
