@@ -33,7 +33,8 @@ function MovieDetails({ movie }) {
   return (
     <Link to={`./movies/${movie.id}`}>
     <div className="movie-card">
-      <Link to={`./movies/${movie.id}`}> {title} </Link>
+      {/* <Link to={`./movies/${movie.id}`}> {title} </Link> */}
+      {title}
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
