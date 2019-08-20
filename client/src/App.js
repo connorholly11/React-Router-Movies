@@ -27,7 +27,10 @@ const [savedList, setSavedList] = useState( [] );
         component={Movie}/>
 
         {/* <Route path="/movies/:id" 
-        render={props => <MovieList {...props} movies={Movie}/>} */}
+        render={props => <MovieList {...props} movies={Movie}/>} 
+        
+        ONLY need to use (render function) this when you are passing state to another component. If we were passing saved list then we would need it*/}
+
         
       </div>
     </div>

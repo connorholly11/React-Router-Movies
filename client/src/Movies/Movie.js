@@ -7,6 +7,7 @@ const Movie = (props) => {
   console.log(props);
 
   const id = props.match.params.id;
+  //I'm putting this here so it is in scope of useEffect and the dependency array
  
   useEffect(() => {
 
@@ -25,7 +26,11 @@ const Movie = (props) => {
         });
 
   },[id]);
+
+  //the id dependency array is telling the the useEffect to watch the id and then change if it updates
   
+
+
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
